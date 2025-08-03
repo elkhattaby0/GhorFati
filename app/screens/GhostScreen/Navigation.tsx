@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from '../Home';
+import Home from '../../components/Home';
 import { View } from 'react-native';
 import Header from '../../components/Header';
 import TabBottom from '../../components/TabBottom';
 import Messages from './Messages';
 import { useNavigation } from '@react-navigation/native';
-import Profile from './Profile';
+import Profile from '../../components/Profile';
 const Stack = createNativeStackNavigator();
 
 function BodyNavigation() {

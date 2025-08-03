@@ -1,6 +1,6 @@
 import { Dimensions, Image, Pressable, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
-export default function Profile() {
+export default function Profile({navigation}) {
     const screenLinks = [
         { "name": "My Information", "img": "https://img.icons8.com/?size=100&id=77&format=png" },
         { "name": "My Bookings", "img": "https://img.icons8.com/?size=100&id=4027&format=png" },
@@ -21,7 +21,7 @@ export default function Profile() {
                 alignItems: 'center', padding: 0, margin: 0, gap: 15, 
                 }}
             >
-                <Pressable>
+                <Pressable onPress={()=> navigation.navigate('user')}>
                     <Image 
                         source={{
                             uri: 'https://img.icons8.com/?size=100&id=7811&format=png'

@@ -5,11 +5,12 @@ type CardProps = {
     imageUri: string;
     Title: string;
     City: string;
+    navigation: any;
 }
 
-export default function Card({ imageUri, Title, City }: CardProps) {
+export default function Card({ imageUri, Title, City, navigation }: CardProps) {
     return (
-        <Pressable
+        <Pressable onPress={()=> navigation.navigate('cardDetail')}
             style={styles.btn}
             >
             <Image

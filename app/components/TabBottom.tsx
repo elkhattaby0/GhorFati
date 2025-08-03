@@ -12,7 +12,7 @@ type TabBottomProps = {
 
 
 export default function TabBottom({ Data, navigation }: TabBottomProps) {
-    const currentRoute = navigation.getState().routes[navigation.getState().index].name;
+    
     return (
         <View
             style={styles.view}
@@ -24,7 +24,7 @@ export default function TabBottom({ Data, navigation }: TabBottomProps) {
                         style={[styles.btn,
                             n.id === 1 && { backgroundColor: '#fdb827', }
                         ]}
-                        onPress={()=>  navigation.navigate('Navigation', {screen: n.title})}
+                        onPress={()=>  navigation.navigate(n.title)}
                     >
                         <Image
                             source={{ uri: `${n.iconUri}` }}

@@ -1,6 +1,6 @@
 import { StyleSheet, ScrollView, View, Text, Dimensions, Image, TextInput } from "react-native";
-import Card from "../components/Card";
-import CitesCard from "../components/CitesCard";
+import Card from "./Card";
+import CitesCard from "./CitesCard";
 import Carousel from 'react-native-reanimated-carousel';
 
 
@@ -12,7 +12,7 @@ const agadir = "https://c4.wallpaperflare.com/wallpaper/217/287/718/agadir-wallp
 
 const windowWidth = Dimensions.get('window').width - 45;
 
-export default function Home() {
+export default function Home({navigation}) {
     const Cities = [
         { name: "Casablanca", color: "#005f73", Image: casablanca },
         { name: "Rabat", color: "#0a9396", Image: rabat },
@@ -54,7 +54,7 @@ export default function Home() {
                     }}
                 />
             </View>
-            <Card 
+            <Card navigation={navigation}
                 imageUri={"https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=1024x1024&w=is&k=20&c=EmpbOMOx61HMHbi1wAfacfobu_P3jwsCX3FGnMoNgCY="}
                 Title="Rent Room"
                 City="Agaidr"
@@ -77,7 +77,7 @@ export default function Home() {
                             scrollAnimationDuration={500}
                             style={{width:'100%'}}
                             renderItem={({item})=> (
-                                <CitesCard Name={item.name} Color={item.color} ImageUri={item.Image}/>
+                                <CitesCard Name={item.name} Color={item.color} ImageUri={item.Image} />
                             )}
                         />   
                     }
@@ -101,7 +101,7 @@ export default function Home() {
                             scrollAnimationDuration={1000}
                             style={{width:'100%'}}
                             renderItem={({item})=> (
-                                <Card Title={item.name} City={"Maroc"} imageUri={item.Image}/>
+                                <Card Title={item.name} City={"Maroc"} imageUri={item.Image} navigation={navigation} />
                             )}
                         />   
                     }
